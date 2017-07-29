@@ -1,0 +1,68 @@
+    <!-- Content Header (Page header) -->
+    <section class="content-header" >
+        <h1>
+            Employee Details
+        </h1>
+        <ol class="breadcrumb">
+            <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">Employee Details</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <div class="row well-sm" style="margin-right: 10px;">
+				<a href='#/app/addEmployee'><button type="button" class="btn btn-info pull-right" ><i class="glyphicon glyphicon-plus">
+								</i> Add New Employee</button></a>
+			</div>
+    <section class="content">
+    <div class="row" ng-controller='empListCtrl'>
+        <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+					<table class="table table-striped table-bordered">
+ 						<thead class="text-center">
+  <th class="text-center">First Name</th>
+  <th class="text-center">Middle Name</th>
+  <th class="text-center">Last Name</th>
+  <th class="text-center">Email</th>
+  <th class="text-center">Phone</th>
+  <th class="text-center">Action</th>
+ </thead>
+ <tbody>
+   <tr ng-repeat="employee in employees">
+   <td>{{employee.firstName}}</td>
+   <td>{{employee.middleName}}</td>
+   <td>{{employee.lastName}}</td>
+   <td>{{employee.email}}</td>
+   <td>{{employee.phone}}</td>
+   <td class="text-center">
+    <button type="button" class="btn btn-primary"  ng-click='updateEmployeeDetails(employee)' >Edit</button>
+    <button type="button" class="btn btn-danger"  ng-click='deleteEmployeeDetails(employee)' >Delete</button>
+   </td>
+  </tr> 
+  
+  <!-- <tr >
+   <td>Shiva</td>
+   <td>Shiva@gmail.com</td>
+   <td>2222</td>
+   <td>active</td>
+   <td>USA</td>
+   <td>
+    <button type="button" class="btn btn-primary">Edit</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+   </td>
+  </tr> 
+   -->
+  
+ </tbody>
+</table>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+ </div>
+    </section><!-- /.content -->
+

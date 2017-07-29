@@ -1,0 +1,199 @@
+<section class="content-header">
+    <h1>
+        Add Employee Information
+    </h1>
+    <ol class="breadcrumb">
+        <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Add Employee Information</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content ng-scope" ng-controller='addEmployeeCtrl'>
+    <div class="row" style="min-height:500px;">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-3 pull-right">
+								<!--button type="submit" class="btn-responsive btn btn-primary">Save</button-->
+								<input type="button" class="btn-responsive btn btn-primary save"  ng-click='addEmployeeDetails()' value="Save">
+								<!-- <input type="button" class="btn-responsive btn btn-primary savenext" value="Save &amp; Next"> -->
+								<a href="#/app/employee" class="btn-responsive btn btn-danger">Cancel</a>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="col-sm-12">
+							  <input type="hidden" name="_token" value="r5qRsajfWKW1djfPfzQciA2h26CN5f0tHMmGYYBQ">
+							  <div class="form-group col-xs-6 ">
+								<label for="fname">First Name <span style="color: red">*</span> </label>
+								  <input type="text" class="form-control" ng-model="firstName" placeholder="First Name" name="fname" value=""> 
+															  </div>
+							  <div class="form-group col-xs-6 ">
+								<label for="mname">Middle Name</label>
+								  <input type="text" class="form-control" ng-model="middleName" placeholder="Middle Name" name="mname" value="">
+								
+															  </div>
+							  
+							  <div class="form-group col-xs-6 ">
+								<label for="lname">Last Name <span style="color: red">*</span> </label>
+								  <input type="text" class="form-control" ng-model="lastName" placeholder="Last Name" name="lname" value="">
+								
+															  </div>
+							 <div class="form-group col-xs-6 ">
+								<label for="email">Email <span style="color: red">*</span> </label>
+								  <input type="email" class="form-control" placeholder="Email" ng-model="email">
+								
+															  </div>
+							  <div class="form-group col-xs-6 ">
+								<label for="w4detail_upload">Profile Image</label>
+								  <input type="file" name="profile_image">
+								
+															  </div>
+
+							  <div class="form-group col-xs-6 ">
+								<label for="phone">Phone</label>
+								 
+								  <input class="form-control input-sm" data-inputmask="'mask': '999-999-9999', 'showTooltip': true" ng-model="phone" value="" title="999-999-9999">
+                                  <span class="text-muted help-block">999-999-9999</span>
+								
+								
+								
+							  </div>
+							  <div class="personal_address">
+							  <h5>Personal Address</h5><br>
+							   <div class="form-group col-xs-6 ">								
+								  <label for="fname">Address 1</label>
+								  <textarea class="form-control" placeholder="Address 1" name="personal_address1"></textarea>
+							  </div>
+							  <div class="form-group col-xs-6 ">								
+								  <label for="fname">Address 2</label>
+								  <textarea class="form-control" placeholder="Address 2" name="personal_address2"></textarea>
+							  </div>
+							  <div class="form-group col-xs-6 ">								
+								  <label for="fname">Country</label><br>
+								  <input type="text" name="personal_country" value="UNITED STATES" class="form-control" readonly="readonly">
+								   
+							  </div>
+							  <div class="form-group col-xs-6 ">								
+								  <label for="fname">Zone/State</label>
+								  <div id="statesel"><input type="text" class="form-control ui-autocomplete-input" id="statese2" placeholder="State" name="personal_state" value="" autocomplete="off"></div>
+							  </div>
+							   <div class="form-group col-xs-6 ">								
+								  <label for="fname">City</label>
+								  <!--div id="city11"-->
+									  <input type="text" class="form-control" placeholder="City" id="city11" name="personal_city" value="">
+								  <!--/div-->
+							  </div>							  
+							  <div class="form-group col-xs-6 ">								
+								  <label for="fname">Zipcode</label>
+								  <input maxlength="5" type="text" class="form-control" placeholder="Zipcode" name="personal_postcode" value="">
+								   									
+							  </div>							  
+							  </div>
+							  <div class="communication_address">
+								<h5>Communication Address<br><br>
+								<input type="checkbox" name="same_as_personel" value="yes" id="same_as_personel"> Different from Personal address</h5><br>
+							   <div class="form-group col-xs-6 " style="display: none;">								
+								  <label for="fname">Address 1</label>
+								  <textarea class="form-control" placeholder="Address 1" name="communication_address1"></textarea>
+							  </div>
+							  <div class="form-group col-xs-6 " style="display: none;">								
+								  <label for="fname">Address 2</label>
+								  <textarea class="form-control" placeholder="Address 2" name="communication_address2"></textarea>
+							  </div>
+							  <div class="form-group col-xs-6 " style="display: none;">								
+								  <label for="fname">Country</label><br>
+								  <input type="text" name="communication_country" class="form-control" value="UNITED STATES" readonly="readonly">
+							  </div>
+							  <div class="form-group col-xs-6 " style="display: none;">								
+								  <label for="fname">Zone/State</label>
+								  
+								  <div id="comm_statesel"><input type="text" class="form-control ui-autocomplete-input" placeholder="State" name="communication_state" value="" id="comm_statese2" autocomplete="off"></div>
+								  
+							  </div>
+							   <div class="form-group col-xs-6 " style="display: none;">								
+								  <label for="fname">City</label>
+								  <input type="text" class="form-control" id="comm_city11" placeholder="City" name="communication_city" value="">
+							  </div>
+							  
+							  <div class="form-group col-xs-6 " style="display: none;">								
+								  <label for="fname">Postcode</label>
+								  <input maxlength="5" type="text" class="form-control" placeholder="Postcode" name="communication_postcode" value="">
+								  							  </div>
+							 </div>
+							  <div class="form-group col-xs-6 ">
+								<label for="dob">Date of Birth</label>
+								  <input type="text" id="dob_datePicker" class="form-control" placeholder="MM-DD-YYYY" name="dob" value="">
+								
+															  </div>
+							  
+							  <div class="form-group col-xs-6 ">
+								<label for="gender">Gender <span style="color: red">*</span> </label>
+									<select class="form-control" name="gender">
+									  <option value=""> Select Gender </option>
+									  <option value="Male"> Male </option>
+									  <option value="Female"> Female </option>  
+									</select>
+															  </div>
+							  
+							  
+							  <div class="form-group col-xs-6 ">
+								<label for="w4detail_upload">W4 Details &amp; Upload</label>
+								  <input type="file" name="w4detail_upload" value="">
+															  </div>
+							
+							  <div class="form-group col-xs-6 ">
+								<label for="i9_document">I-9</label>
+								  <input type="file" name="i9_document" value="">
+								
+															  </div>
+								<div class="form-group col-xs-6 ">
+								<label for="newhirereport_document">New Hire Report</label>
+								  <input type="file" name="newhirereport_document" value="">
+								  
+								  <!--<input type="text" class="form-control" placeholder="W4 Details & Upload" name="w4detail_upload" value=""> -->
+								
+															  </div>
+							  <div class="form-group col-xs-6 ">
+								<label for="on_boarding_document">On-Boarding</label>
+								  <input type="file" name="on_boarding_document" value="">
+								  
+								  <!--<input type="text" class="form-control" placeholder="W4 Details & Upload" name="w4detail_upload" value=""> -->
+								
+															  </div>
+
+							  
+								
+								<div class="form-group col-xs-6 ">
+									<label for="employee_type">Employee Type</label>
+
+									<div class="input-group">
+										<input type="radio" value="1" name="employee_type" checked="">In-House
+										<input type="radio" value="2" name="employee_type">Billable
+										<input type="radio" value="3" name="employee_type">Bench Consultants
+										<input type="radio" value="4" name="employee_type">Exit Employee
+									</div>
+																	</div>
+								<div class="form-group col-xs-6 ">
+								<label for="dob">Hire Date <span style="color: red">*</span> </label>
+								  <input type="text" id="hd_datePicker" class="form-control" placeholder="MM-DD-YYYY" name="hire_date" value="">
+								
+															  </div>
+
+							  <div class="clearfix"></div>
+
+							  <div class="pull-right">
+								<!--button type="submit" class="btn-responsive btn btn-primary" id="checks">Save</button-->
+								<input type="hidden" id="statep" value="">
+								<input type="button" class="btn-responsive btn btn-primary save"  ng-click='addEmployeeDetails()' value="Save">
+								<!-- <input type="button" class="btn-responsive btn btn-primary savenext" value="Save &amp; Next"> -->
+								<a href="#/app/employee" class="btn-responsive btn btn-danger">Cancel</a>
+							  </div>	
+								<input type="hidden" name="savenext" class="savenext1" value="">
+						</div>
+					</div>
+				</div>
+        </div>
+    </div>
+</section>
